@@ -3,6 +3,7 @@ package br.com.ddm.hogwartshistorys
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.tela_login.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,9 +14,14 @@ class MainActivity : AppCompatActivity() {
         login_imagem.setImageResource(R.drawable.imagem_login)
 
         login_botao.setOnClickListener {
-            val intent = Intent(this, TelaInicialActivity::class.java)
-
-            startActivity(intent)
+            val nome_usuario = campo_usuario.text.toString()
+            val senha_usuario = campo_usuario.text.toString()
+            if (nome_usuario == "impacta" && senha_usuario == "impacta") {
+                val intent = Intent(this, TelaInicialActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
