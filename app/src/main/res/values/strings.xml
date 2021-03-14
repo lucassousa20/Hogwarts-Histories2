@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Hogwarts Historys</string>
     <string name="initial_message">Bem Vindo à Hogwarts!</string>
+<<<<<<< HEAD
     <string name="action_buscar">Buscar</string>
     <string name="action_atualizar">Atualizar</string>
+=======
+    <string name="grifinoria">Grifinória</string>
+    <string name="corvinal">Corvinal</string>
+    <string name="sonserina">Sonserina</string>
+    <string name="lufalufa">Lufa-Lufa</string>
+>>>>>>> 797bef7cc9d61ea0f8ec9635e3add840af547b0b
 </resources>
