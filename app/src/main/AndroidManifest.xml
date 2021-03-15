@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HogwartsHistorys">
-        <activity android:name=".ConfiguracoesActivity"></activity>
+        <activity android:name=".ConfiguracoesActivity" />
         <activity android:name=".GrifinoriaActivity" />
         <activity android:name=".TelaInicialActivity" />
         <activity android:name=".MainActivity">

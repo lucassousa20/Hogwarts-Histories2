@@ -15,7 +15,6 @@ class TelaInicialActivity : AppCompatActivity() {
 
         botao_grifinoria.setOnClickListener{
             val intent =  Intent(this, GrifinoriaActivity::class.java)
-
             startActivity(intent)
         }
     }

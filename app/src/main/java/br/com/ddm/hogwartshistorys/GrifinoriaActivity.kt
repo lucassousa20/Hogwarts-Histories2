@@ -13,7 +13,6 @@ class GrifinoriaActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Grifinória"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
