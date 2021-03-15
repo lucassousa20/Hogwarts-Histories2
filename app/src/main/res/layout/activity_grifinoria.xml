@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".GrifinoriaActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="160dp"
-        android:layout_height="25dp"
-        android:text="@string/grifinoria"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="234dp"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/gryffindor_activity"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

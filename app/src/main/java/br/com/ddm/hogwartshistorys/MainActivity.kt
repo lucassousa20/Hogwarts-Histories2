@@ -14,16 +14,17 @@ class MainActivity : AppCompatActivity() {
         login_imagem.setImageResource(R.drawable.imagem_login)
 
         login_botao.setOnClickListener {
-            val nome_usuario = campo_usuario.text.toString()
-            val senha_usuario = campo_usuario.text.toString()
-            if (nome_usuario == "aluno" && senha_usuario == "impacta") {
-                val intent = Intent(this, TelaInicialActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
-            }
-//            val intent = Intent(this, TelaInicialActivity::class.java)
-//            startActivity(intent)
+//            val nome_usuario = campo_usuario.text.toString()
+//            val senha_usuario = campo_senha.text.toString()
+//            if (nome_usuario == "aluno" && senha_usuario == "impacta") {
+//                val intent = Intent(this, TelaInicialActivity::class.java)
+//                startActivity(intent)
+//            } else {
+//                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
+//            }
+
+            val intent = Intent(this, TelaInicialActivity::class.java)
+            startActivity(intent)
         }
 
     }

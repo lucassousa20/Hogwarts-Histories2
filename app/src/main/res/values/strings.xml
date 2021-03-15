@@ -3,11 +3,10 @@
     <string name="initial_message">Bem Vindo à Hogwarts!</string>
     <string name="action_buscar">Buscar</string>
     <string name="action_atualizar">Atualizar</string>
-    <string name="grifinoria">Grifinória</string>
+    <string name="grifinoria">Grifinória Rules</string>
     <string name="corvinal">Corvinal</string>
     <string name="sonserina">Sonserina</string>
     <string name="lufalufa">Lufa-Lufa</string>
     <string name="action_configurar">Configurações</string>
     <string name="action_sair">Sair</string>
-    >>>>>>> 797bef7cc9d61ea0f8ec9635e3add840af547b0b
 </resources>
