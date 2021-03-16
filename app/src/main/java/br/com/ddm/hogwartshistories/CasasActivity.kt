@@ -16,13 +16,15 @@ class CasasActivity : AppCompatActivity() {
         if (botao == "Sonserina") {
             supportActionBar?.title = "Sonserina"
             imagem_casa.setImageResource(R.drawable.sonserina_simbolo)
-
         } else if (botao == "Lufa-Lufa") {
             supportActionBar?.title = "Lufa-Lufa"
             imagem_casa.setImageResource(R.drawable.lufalufa_simbolo)
-        }else if (botao == "Corvinal") {
+        } else if (botao == "Corvinal") {
             supportActionBar?.title = "Corvinal"
             imagem_casa.setImageResource(R.drawable.corvinal_simbolo)
+        } else if (botao == "Grifinória"){
+            supportActionBar?.title = "Grifinória"
+            imagem_casa.setImageResource(R.drawable.grifinoria_simbolo)
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }

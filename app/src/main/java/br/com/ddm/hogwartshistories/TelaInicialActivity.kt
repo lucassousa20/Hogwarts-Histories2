@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 
 class TelaInicialActivity : AppCompatActivity() {
@@ -38,6 +41,14 @@ class TelaInicialActivity : AppCompatActivity() {
             intent.putExtras(params)
             startActivity(intent)
         }
+
+        botao_grifinoria.setOnClickListener {
+            val botao_grifinoria = botao_corvinal.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_grifinoria)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,7 +60,13 @@ class TelaInicialActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.action_atualizar) {
-            Toast.makeText(this, "Atualizar", Toast.LENGTH_SHORT).show()
+//            progressBar.setVisibility(View.VISIBLE)
+            var c = 0
+            while (c <= 10) {
+                Toast.makeText(this, "contoy $c", Toast.LENGTH_SHORT).show()
+            }
+//            progressBar.setVisibility(View.INVISIBLE)
+
         } else if (id == R.id.action_configurar) {
             val intent = Intent(this, ConfiguracoesActivity::class.java)
             startActivity(intent)
