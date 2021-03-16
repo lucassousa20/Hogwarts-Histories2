@@ -13,10 +13,10 @@ class TelaInicialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
 
-        botao_grifinoria.setOnClickListener{
-            val intent =  Intent(this, GrifinoriaActivity::class.java)
-            startActivity(intent)
-        }
+//        botao_grifinoria.setOnClickListener{
+//            val intent =  Intent(this, GrifinoriaActivity::class.java)
+//            startActivity(intent)
+//        }
 
         botao_sonserina.setOnClickListener{
             val intent =  Intent(this, SonserinaActivity::class.java)
