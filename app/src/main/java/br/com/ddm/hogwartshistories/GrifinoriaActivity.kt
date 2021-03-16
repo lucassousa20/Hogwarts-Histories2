@@ -1,15 +1,15 @@
-package br.com.ddm.hogwartshistorys
+package br.com.ddm.hogwartshistories
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 
-class ConfiguracoesActivity : AppCompatActivity() {
+class GrifinoriaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_configuracoes)
+        setContentView(R.layout.activity_grifinoria)
 
-        supportActionBar?.title = "Configurações"
+        supportActionBar?.title = "Grifinória"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

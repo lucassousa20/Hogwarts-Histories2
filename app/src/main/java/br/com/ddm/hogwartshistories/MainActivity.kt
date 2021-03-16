@@ -1,4 +1,4 @@
-package br.com.ddm.hogwartshistorys
+package br.com.ddm.hogwartshistories
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

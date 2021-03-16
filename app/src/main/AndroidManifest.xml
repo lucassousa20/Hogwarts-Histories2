@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.ddm.hogwartshistorys">
+    package="br.com.ddm.hogwartshistories">
 
     <application
         android:allowBackup="true"
@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HogwartsHistorys">
+        <activity android:name=".SonserinaActivity"></activity>
         <activity android:name=".ConfiguracoesActivity" />
         <activity android:name=".GrifinoriaActivity" />
         <activity android:name=".TelaInicialActivity" />

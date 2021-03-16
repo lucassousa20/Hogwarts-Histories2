@@ -1,4 +1,4 @@
-package br.com.ddm.hogwartshistorys
+package br.com.ddm.hogwartshistories
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +15,11 @@ class TelaInicialActivity : AppCompatActivity() {
 
         botao_grifinoria.setOnClickListener{
             val intent =  Intent(this, GrifinoriaActivity::class.java)
+            startActivity(intent)
+        }
+
+        botao_sonserina.setOnClickListener{
+            val intent =  Intent(this, SonserinaActivity::class.java)
             startActivity(intent)
         }
     }

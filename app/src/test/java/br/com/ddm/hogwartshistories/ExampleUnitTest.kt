@@ -1,4 +1,4 @@
-package br.com.ddm.hogwartshistorys
+package br.com.ddm.hogwartshistories
 
 import org.junit.Test
 
