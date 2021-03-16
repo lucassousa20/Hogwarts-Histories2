@@ -13,13 +13,29 @@ class TelaInicialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
 
-//        botao_grifinoria.setOnClickListener{
-//            val intent =  Intent(this, GrifinoriaActivity::class.java)
-//            startActivity(intent)
-//        }
+        val intent =  Intent(this, CasasActivity::class.java)
+
+        botao_lufalufa.setOnClickListener{
+            val botao_fufalufa = botao_lufalufa.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_fufalufa)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
 
         botao_sonserina.setOnClickListener{
-            val intent =  Intent(this, SonserinaActivity::class.java)
+            val botao_sonserina = botao_sonserina.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_sonserina)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
+
+        botao_corvinal.setOnClickListener {
+            val botao_corvinal = botao_corvinal.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_corvinal)
+            intent.putExtras(params)
             startActivity(intent)
         }
     }
