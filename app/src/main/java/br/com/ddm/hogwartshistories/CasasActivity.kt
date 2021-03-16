@@ -13,7 +13,10 @@ class CasasActivity : AppCompatActivity() {
 
         var params = intent.extras
         val botao = params?.getString("botao")
-        if (botao == "Sonserina") {
+        if (botao == "Grifinória"){
+            supportActionBar?.title = "Grifinória"
+            imagem_casa.setImageResource(R.drawable.grifinoria_simbolo)
+        } else if (botao == "Sonserina") {
             supportActionBar?.title = "Sonserina"
             imagem_casa.setImageResource(R.drawable.sonserina_simbolo)
         } else if (botao == "Lufa-Lufa") {
@@ -22,9 +25,6 @@ class CasasActivity : AppCompatActivity() {
         } else if (botao == "Corvinal") {
             supportActionBar?.title = "Corvinal"
             imagem_casa.setImageResource(R.drawable.corvinal_simbolo)
-        } else if (botao == "Grifinória"){
-            supportActionBar?.title = "Grifinória"
-            imagem_casa.setImageResource(R.drawable.grifinoria_simbolo)
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }

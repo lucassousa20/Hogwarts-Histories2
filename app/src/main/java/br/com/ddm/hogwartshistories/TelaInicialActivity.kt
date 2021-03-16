@@ -18,10 +18,10 @@ class TelaInicialActivity : AppCompatActivity() {
 
         val intent =  Intent(this, CasasActivity::class.java)
 
-        botao_lufalufa.setOnClickListener{
-            val botao_fufalufa = botao_lufalufa.text.toString()
+        botao_grifinoria.setOnClickListener {
+            val botao_grifinoria = botao_grifinoria.text.toString()
             val params = Bundle()
-            params.putString("botao", botao_fufalufa)
+            params.putString("botao", botao_grifinoria)
             intent.putExtras(params)
             startActivity(intent)
         }
@@ -34,6 +34,14 @@ class TelaInicialActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        botao_lufalufa.setOnClickListener{
+            val botao_fufalufa = botao_lufalufa.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_fufalufa)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
+
         botao_corvinal.setOnClickListener {
             val botao_corvinal = botao_corvinal.text.toString()
             val params = Bundle()
@@ -42,13 +50,7 @@ class TelaInicialActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        botao_grifinoria.setOnClickListener {
-            val botao_grifinoria = botao_corvinal.text.toString()
-            val params = Bundle()
-            params.putString("botao", botao_grifinoria)
-            intent.putExtras(params)
-            startActivity(intent)
-        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,13 +62,14 @@ class TelaInicialActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.action_atualizar) {
-//            progressBar.setVisibility(View.VISIBLE)
+            progressBar.setVisibility(View.VISIBLE)
             var c = 0
-            while (c <= 10) {
-                Toast.makeText(this, "contoy $c", Toast.LENGTH_SHORT).show()
+            while (c <= 2) {
+                c++
             }
-//            progressBar.setVisibility(View.INVISIBLE)
-
+            if (c == 2) {
+                Toast.makeText(this, "dsdsd", Toast.LENGTH_SHORT).show()
+            }
         } else if (id == R.id.action_configurar) {
             val intent = Intent(this, ConfiguracoesActivity::class.java)
             startActivity(intent)

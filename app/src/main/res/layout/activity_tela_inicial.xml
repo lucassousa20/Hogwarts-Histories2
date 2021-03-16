@@ -7,46 +7,51 @@
     tools:context=".TelaInicialActivity"
     android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/botao_corvinal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/corvinal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="57dp"/>
-
-    <Button
-        android:id="@+id/botao_sonserina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sonserina"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="235dp" />
-
-    <Button
-        android:id="@+id/botao_lufalufa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lufalufa"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="235dp" />
-
     <Button
         android:id="@+id/botao_grifinoria"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/Grifinoria"
         android:text="@string/grifinoria"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="57dp" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
+    <Button
+        android:id="@+id/botao_sonserina"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"/>
+        android:layout_height="100dp"
+        android:text="@string/sonserina"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="235dp"
+        android:backgroundTint="@color/Sonserina"/>
+
+    <Button
+        android:id="@+id/botao_lufalufa"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/lufalufa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="235dp"
+        android:backgroundTint="@color/LufaLufa"/>
+
+    <Button
+        android:id="@+id/botao_corvinal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/corvinal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="57dp"
+        android:backgroundTint="@color/Corvinal"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            />
+
 </LinearLayout>
