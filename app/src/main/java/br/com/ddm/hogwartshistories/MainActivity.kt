@@ -11,8 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tela_login)
 
-        login_imagem.setImageResource(R.drawable.imagem_login)
-
         login_botao.setOnClickListener {
             val nome_usuario = campo_usuario.text.toString()
             val senha_usuario = campo_senha.text.toString()
