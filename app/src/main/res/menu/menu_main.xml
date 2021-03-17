@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_atualizar"
+        android:id="@+id/action_buscar"
         android:title="@string/action_atualizar"
-        android:icon="@drawable/ic_atualizar_white"
-        app:showAsAction="always"
-        />
+        android:icon="@drawable/ic_buscar_white"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
     <item
         android:id="@+id/action_configurar"

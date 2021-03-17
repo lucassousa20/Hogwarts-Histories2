@@ -1,11 +1,14 @@
 package br.com.ddm.hogwartshistories
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.*
@@ -49,28 +52,39 @@ class TelaInicialActivity : AppCompatActivity() {
             intent.putExtras(params)
             startActivity(intent)
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+
+        val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchItem = menu?.findItem(R.id.action_buscar)
+        val searchView = searchItem?.actionView as androidx.appcompat.widget.SearchView
+
+        searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
+
+        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.clearFocus()
+                searchView.setQuery("", false)
+                searchItem.collapseActionView()
+                Toast.makeText(this@TelaInicialActivity, "Procurando por $query", Toast.LENGTH_LONG).show()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                return false
+            }
+        })
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-        if (id == R.id.action_atualizar) {
-            progressBar.setVisibility(View.VISIBLE)
-            var c = 0
-            while (c <= 2) {
-                c++
-            }
-            if (c == 2) {
-                Toast.makeText(this, "dsdsd", Toast.LENGTH_SHORT).show()
-            }
-        } else if (id == R.id.action_configurar) {
+        if (id == R.id.action_configurar) {
             val intent = Intent(this, ConfiguracoesActivity::class.java)
             startActivity(intent)
         } else if (id == R.id.action_sair) {
