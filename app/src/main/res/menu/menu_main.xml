@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_buscar"
-        android:title="@string/action_atualizar"
+        android:title="@string/action_buscar"
         android:icon="@drawable/ic_buscar_white"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
