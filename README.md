@@ -1,1 +1,1 @@
-# Hogwarts historys 
+# Hogwarts histories 
