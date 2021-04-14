@@ -10,11 +10,15 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicialActivity : AppCompatActivity() {
+class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
@@ -52,6 +56,10 @@ class TelaInicialActivity : AppCompatActivity() {
             intent.putExtras(params)
             startActivity(intent)
         }
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        configuraMenuLateral()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -91,5 +99,35 @@ class TelaInicialActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun configuraMenuLateral(){
+        var toogle = ActionBarDrawerToggle(this, layout_menu_lateral, toolbar, R.string.nav_open, R.string.nav_close)
+        layout_menu_lateral.addDrawerListener(toogle)
+        toogle.syncState()
+
+        nav_menu_lateral.setNavigationItemSelectedListener(this)
+
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.nav_casas-> {
+                Toast.makeText(this, "Clicou em Casas", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, CasasActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_personagens -> {
+                Toast.makeText(this, "Clicou em Personagens", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_sair -> {
+                Toast.makeText(this, "Clicou em Sair", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        layout_menu_lateral.closeDrawer(GravityCompat.START)
+
+        return true
     }
 }
