@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
             val senha_usuario = campo_senha.text.toString()
             if (nome_usuario == "aluno" && senha_usuario == "impacta") {
                 val intent = Intent(this, TelaInicialActivity::class.java)
-                startActivity(intent)
+            startActivity(intent)
             } else {
                 Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
             }

@@ -23,43 +23,20 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
 
-        val intent =  Intent(this, CasasActivity::class.java)
 
-        botao_grifinoria.setOnClickListener {
-            val botao_grifinoria = botao_grifinoria.text.toString()
-            val params = Bundle()
-            params.putString("botao", botao_grifinoria)
-            intent.putExtras(params)
-            startActivity(intent)
-        }
-
-        botao_sonserina.setOnClickListener{
-            val botao_sonserina = botao_sonserina.text.toString()
-            val params = Bundle()
-            params.putString("botao", botao_sonserina)
-            intent.putExtras(params)
-            startActivity(intent)
-        }
-
-        botao_lufalufa.setOnClickListener{
-            val botao_fufalufa = botao_lufalufa.text.toString()
-            val params = Bundle()
-            params.putString("botao", botao_fufalufa)
-            intent.putExtras(params)
-            startActivity(intent)
-        }
-
-        botao_corvinal.setOnClickListener {
-            val botao_corvinal = botao_corvinal.text.toString()
-            val params = Bundle()
-            params.putString("botao", botao_corvinal)
-            intent.putExtras(params)
-            startActivity(intent)
-        }
-
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
+    }
+
+    private fun configuraMenuLateral(){
+        var toogle = ActionBarDrawerToggle(this, layout_menu_lateral, toolbar, R.string.nav_open, R.string.nav_close)
+        layout_menu_lateral.addDrawerListener(toogle)
+        toogle.syncState()
+
+        nav_menu_lateral.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -101,28 +78,21 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         return super.onOptionsItemSelected(item)
     }
 
-    private fun configuraMenuLateral(){
-        var toogle = ActionBarDrawerToggle(this, layout_menu_lateral, toolbar, R.string.nav_open, R.string.nav_close)
-        layout_menu_lateral.addDrawerListener(toogle)
-        toogle.syncState()
 
-        nav_menu_lateral.setNavigationItemSelectedListener(this)
-
-    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
             R.id.nav_casas-> {
                 Toast.makeText(this, "Clicou em Casas", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, CasasActivity::class.java)
+                val intent = Intent(this, TelaInicialActivity::class.java)
                 startActivity(intent)
             }
             R.id.nav_personagens -> {
                 Toast.makeText(this, "Clicou em Personagens", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_sair -> {
-                Toast.makeText(this, "Clicou em Sair", Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
 

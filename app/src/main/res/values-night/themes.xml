@@ -14,4 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="android:textColorHint">@color/color_hint</item>
     </style>
+    <style name="AppTheme.Toolbar" parent="Theme.HogwartsHistorys">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

@@ -4,7 +4,7 @@
         <item
             android:id="@+id/nav_casas"
             android:icon="@drawable/ic_home_white_24dp"
-            android:title="Classes"
+            android:title="Casas"
             android:checked="true"/>
 
         <item
