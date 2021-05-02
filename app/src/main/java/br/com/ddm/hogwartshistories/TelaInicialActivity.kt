@@ -8,26 +8,88 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.contentValuesOf
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val context: Context get() = this
+    private var disciplinas = listOf<Disciplina>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
 
+        val intent =  Intent(this, CasasActivity::class.java)
+
+        botao_grifinoria.setOnClickListener {
+            val botao_grifinoria = botao_grifinoria.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_grifinoria)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
+
+        botao_sonserina.setOnClickListener{
+            val botao_sonserina = botao_sonserina.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_sonserina)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
+
+        botao_lufalufa.setOnClickListener{
+            val botao_fufalufa = botao_lufalufa.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_fufalufa)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
+
+        botao_corvinal.setOnClickListener {
+            val botao_corvinal = botao_corvinal.text.toString()
+            val params = Bundle()
+            params.putString("botao", botao_corvinal)
+            intent.putExtras(params)
+            startActivity(intent)
+        }
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
+
+        recyclerDisciplinas?.layoutManager = LinearLayoutManager(context)
+        recyclerDisciplinas?.itemAnimator = DefaultItemAnimator()
+        recyclerDisciplinas?.setHasFixedSize(true)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        taskDisciplinas()
+    }
+
+    fun taskDisciplinas(){
+        disciplinas = DisciplinaService.getDisciplinas(context)
+        recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) {onClickDisciplina (it)}
+    }
+
+    fun onClickDisciplina(disciplina: Disciplina) {
+        Toast.makeText(context, "Clicou na disciplina de ${disciplina.nome}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(context, DisciplinaActivity::class.java)
+        intent.putExtra("disciplina", disciplina)
+        startActivity(intent)
     }
 
     private fun configuraMenuLateral(){
@@ -91,6 +153,11 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             R.id.nav_personagens -> {
                 Toast.makeText(this, "Clicou em Personagens", Toast.LENGTH_SHORT).show()
             }
+            R.id.nav_disciplinas -> {
+                Toast.makeText(this, "Clicou em Disciplinas", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DisciplinaActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_sair -> {
                 finish()
             }
@@ -100,4 +167,5 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
         return true
     }
+
 }

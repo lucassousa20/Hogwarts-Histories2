@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HogwartsHistorys">
-        <activity android:name=".DetalheCasaActivity"></activity>
+        <activity android:name=".DisciplinaActivity"
+            android:theme="@style/AppTheme.Toolbar"
+            android:parentActivityName=".TelaInicialActivity"></activity>
         <activity android:name=".CasasActivity" />
         <activity android:name=".ConfiguracoesActivity" />
-        <activity android:name=".TelaInicialActivity"
-            android:theme="@style/AppTheme.Toolbar"/>
+        <activity
+            android:name=".TelaInicialActivity"
+            android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

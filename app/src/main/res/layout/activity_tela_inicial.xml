@@ -15,46 +15,78 @@
         android:orientation="vertical">
 
         <include layout="@layout/toolbar"/>
-
-        <Button
-            android:id="@+id/botao_grifinoria"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/Grifinoria"
-            android:text="@string/grifinoria"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="57dp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/botao_sonserina"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/sonserina"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="235dp"
-            android:backgroundTint="@color/Sonserina"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Casas"
+                android:textSize="30sp"/>
 
-        <Button
-            android:id="@+id/botao_lufalufa"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/lufalufa"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="240dp"
-            tools:layout_editor_absoluteY="235dp"
-            android:backgroundTint="@color/LufaLufa"/>
+            <Button
+                android:id="@+id/botao_grifinoria"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/Grifinoria"
+                android:text="@string/grifinoria"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="57dp" />
 
-        <Button
-            android:id="@+id/botao_corvinal"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/corvinal"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="243dp"
-            tools:layout_editor_absoluteY="57dp"
-            android:backgroundTint="@color/Corvinal"/>
+            <Button
+                android:id="@+id/botao_sonserina"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@string/sonserina"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="235dp"
+                android:backgroundTint="@color/Sonserina"/>
+
+            <Button
+                android:id="@+id/botao_lufalufa"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@string/lufalufa"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="235dp"
+                android:backgroundTint="@color/LufaLufa"/>
+
+            <Button
+                android:id="@+id/botao_corvinal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@string/corvinal"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="243dp"
+                tools:layout_editor_absoluteY="57dp"
+                android:backgroundTint="@color/Corvinal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Disciplinas"
+                android:textSize="30sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerDisciplinas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="@android:color/transparent"
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
