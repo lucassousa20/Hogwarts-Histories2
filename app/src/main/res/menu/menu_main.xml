@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_buscar"
+        android:title="@string/action_buscar"
+        android:icon="@drawable/ic_buscar_white"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_configurar"
+        android:title="@string/action_configurar"
+        android:icon="@drawable/ic_configuracoes_white"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/action_sair"
+        android:title="@string/action_sair"
+        android:icon="@drawable/ic_sair_white"
+        app:showAsAction="always"
+        />
+
+
+</menu>
