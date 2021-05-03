@@ -155,8 +155,6 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             }
             R.id.nav_disciplinas -> {
                 Toast.makeText(this, "Clicou em Disciplinas", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, DisciplinaActivity::class.java)
-                startActivity(intent)
             }
             R.id.nav_sair -> {
                 finish()
