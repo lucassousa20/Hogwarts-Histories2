@@ -3,18 +3,13 @@ package br.com.ddm.hogwartshistories
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.LinearLayout
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.contentValuesOf
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
@@ -77,12 +72,22 @@ class TelaInicialActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
     override fun onResume() {
         super.onResume()
-        taskDisciplinas()
+        taskUsuarios()
     }
 
-    fun taskDisciplinas(){
-        disciplinas = DisciplinaService.getDisciplinas(context)
-        recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) {onClickDisciplina (it)}
+    fun taskUsuarios() {
+        // Criar a Thread
+
+        Thread {
+            // Código para procurar as disciplinas
+            // que será executado em segundo plano / Thread separada
+            this.disciplinas = DisciplinaService.getDisciplinas(context)
+            runOnUiThread {
+                // Código para atualizar a UI com a lista de disciplinas
+                recyclerDisciplinas?.adapter = DisciplinaAdapter(this.disciplinas) { onClickDisciplina(it) }
+            }
+        }.start()
+
     }
 
     fun onClickDisciplina(disciplina: Disciplina) {

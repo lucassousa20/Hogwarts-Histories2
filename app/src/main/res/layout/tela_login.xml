@@ -56,6 +56,17 @@
         android:layout_centerHorizontal="true"
         android:stateListAnimator="@null"/>
 
+    <Button
+        android:id="@+id/action_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/campo_senha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:stateListAnimator="@null"
+        android:text="Cadastrar"
+        android:textAlignment="center" />
+
     <ProgressBar
         android:id="@+id/progress_login"
         style="?android:attr/progressBarStyle"

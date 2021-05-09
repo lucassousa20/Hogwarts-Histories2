@@ -1,23 +1,32 @@
 package br.com.ddm.hogwartshistories
-
 import android.content.Context
+import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 object DisciplinaService {
 
-    fun getDisciplinas (context: Context) : List<Disciplina> {
-        val disciplinas = mutableListOf<Disciplina>()
+    val host = "https://http://mvitoria.pythonanywhere.com"
+    val TAG = "WS_HH"
 
-        for (i in 1..10) {
-            val d = Disciplina()
-            d.nome = "Disciplina de $i"
-            d.ementa = "Ementa Disciplina $i"
-            d.professor = "Professor Disciplina $i"
-            d.foto = "https://cdn.pixabay.com/photo/2018/01/18/20/42/pencil-3091204_1280.jpg"
-            disciplinas.add(d)
-        }
+    fun getDisciplinas (context: Context) : List<Disciplina> {
+
+        val url ="$host/usuarios"
+        val json = HttpHelper.get(url)
+
+        Log.d(TAG, json)
+
+        var disciplinas = parseJson<List<Disciplina>>(json)
 
         return disciplinas
-
     }
 
+    fun saveDisciplina(disciplina: Disciplina) : String {
+        val json =HttpHelper.post("$host/usuarios", disciplina.toJson())
+        return json
+    }
+    inline fun <reified T> parseJson(json: String) : T {
+        val type = object: TypeToken<T>(){}.type
+        return Gson().fromJson<T>(json, type)
+    }
 }
