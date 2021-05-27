@@ -2,12 +2,12 @@ package br.com.ddm.hogwartshistories
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.tela_login.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,16 +15,22 @@ class MainActivity : AppCompatActivity() {
     private val context: Context get() = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tela_login)
 
         login_botao.setOnClickListener {
-
             progress_login.visibility = View.VISIBLE
             Handler(Looper.getMainLooper()).postDelayed(
                     {
                         val nome_usuario = campo_usuario.text.toString()
                         val senha_usuario = campo_senha.text.toString()
+//                        Thread{
+//                            var usuarios = UsuarioService.getUsuarios(context)
+//                            runOnUiThread{
+//                            for(nome_usuario in usuarios && senha_usuario in )
+//                            }
+//                        }
                         if (nome_usuario == "aluno" && senha_usuario == "impacta") {
                             val intent = Intent(context, TelaInicialActivity::class.java)
                             startActivity(intent)
@@ -35,19 +41,22 @@ class MainActivity : AppCompatActivity() {
                     },
                     1000,
             )
-
-
-
-
         }
 
-//        login_botao.setOnClickListener {
-//            val intent = Intent(this, TelaInicialActivity::class.java)
-//            startActivityForResult(intent, 1)
-//        }
-
+        login_cadastro.setOnClickListener{
+            progress_login.visibility = View.VISIBLE
+            Handler(Looper.getMainLooper()).postDelayed(
+                {
+                        val intent = Intent(context, CadastroActivity::class.java)
+                        startActivity(intent)
+                },
+                1000,
+            )
+        }
 
     }
+
+
 
     override fun onResume() {
         super.onResume()

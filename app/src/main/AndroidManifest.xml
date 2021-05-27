@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HogwartsHistorys">
-        <activity android:name=".DisciplinaActivity"
-            android:theme="@style/AppTheme.Toolbar"
-            android:parentActivityName=".TelaInicialActivity"></activity>
+        <activity android:name=".CadastroActivity"></activity>
         <activity android:name=".CasasActivity" />
         <activity android:name=".ConfiguracoesActivity" />
         <activity
