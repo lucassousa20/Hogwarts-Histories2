@@ -4,20 +4,19 @@ import com.google.gson.GsonBuilder
 import java.io.Serializable
 
 
-class Disciplina : Serializable {
+class Usuario : Serializable {
 
     var id:Long = 0
     var nome = ""
-    var ementa = ""
-    var foto = ""
-    var professor = ""
+    var senha = ""
+
 
     fun toJson() : String{
         return GsonBuilder().create().toJson(this)
     }
 
     override fun toString(): String {
-        return "Disciplina (nome='$nome')"
+        return "Usuario (nome='$nome')"
     }
 
 }

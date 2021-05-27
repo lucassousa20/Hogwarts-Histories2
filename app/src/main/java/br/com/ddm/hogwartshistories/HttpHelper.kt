@@ -29,8 +29,8 @@ object HttpHelper {
     private fun getJson(request: Request): String{
         val response = client.newCall(request).execute()
         val body = response.body()
-        if (body  != null){
-            val json = body?.string()
+        if (body != null){
+            val json = body.string()
             return json
         }
         return ""
