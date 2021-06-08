@@ -7,6 +7,8 @@
     tools:context=".TelaInicialActivity"
     android:orientation="vertical">
 
+    <include layout="@layout/toolbar"/>
+
     <Button
         android:id="@+id/botao_grifinoria"
         android:layout_width="match_parent"

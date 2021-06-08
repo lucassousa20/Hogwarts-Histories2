@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HogwartsHistorys">
+        android:theme="@style/Theme.HogwartsHistories">
         <activity android:name=".CasasActivity"/>
         <activity android:name=".ConfiguracoesActivity" />
-        <activity android:name=".TelaInicialActivity" />
+        <activity android:name=".TelaInicialActivity" android:theme="@style/AppTheme.Toolbar"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

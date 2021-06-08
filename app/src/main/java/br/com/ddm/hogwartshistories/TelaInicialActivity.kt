@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class TelaInicialActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,8 @@ class TelaInicialActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tela_inicial)
 
         val intent =  Intent(this, CasasActivity::class.java)
+
+        setSupportActionBar(toolbar)
 
         botao_grifinoria.setOnClickListener {
             val botao_grifinoria = botao_grifinoria.text.toString()
