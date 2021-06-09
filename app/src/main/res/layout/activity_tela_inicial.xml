@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_menu_lateral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TelaInicialActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <include layout="@layout/toolbar"/>
 
     <Button
@@ -45,8 +50,20 @@
         android:layout_height="100dp"
         android:text="@string/corvinal"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="57dp"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="235dp"
         android:backgroundTint="@color/Corvinal"/>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_menu_lateral"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/menu_lateral_cabecalho"
+        app:menu="@menu/menu_lateral">
 
-</LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
