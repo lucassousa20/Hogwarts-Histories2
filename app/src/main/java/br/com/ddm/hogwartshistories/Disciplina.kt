@@ -1,6 +1,8 @@
 package br.com.ddm.hogwartshistories
 
-class Disciplina {
+import java.io.Serializable
+
+class Disciplina: Serializable   {
 
     var id: Long = 0
     var nome = ""

@@ -1,5 +1,6 @@
 package br.com.ddm.hogwartshistories
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -31,6 +32,10 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
     fun onClickDisciplina (disciplina: Disciplina) {
         Toast.makeText(this, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, DetalheDisciplinaActivity::class.java)
+
+        intent.putExtra("Disciplina", disciplina)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
