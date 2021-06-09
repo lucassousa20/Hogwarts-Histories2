@@ -24,10 +24,16 @@ class ConfiguracoesActivity : AppCompatActivity() {
     private var disciplinas = listOf<Disciplina>()
     override fun onResume() {
         super.onResume()
-        disciplinas = DisciplinaService.getDisciplinas()
-        recycler_disciplinas?.adapter = DisciplinaAdapter(disciplinas) {
-            onClickDisciplina(it)
-        }
+
+        Thread {
+            disciplinas = DisciplinaService.getDisciplinas()
+
+            runOnUiThread{
+                recycler_disciplinas?.adapter = DisciplinaAdapter(disciplinas) {
+                    onClickDisciplina(it)
+                }
+            }
+        }.start()
     }
 
     fun onClickDisciplina (disciplina: Disciplina) {
@@ -35,7 +41,9 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
         val intent = Intent(this, DetalheDisciplinaActivity::class.java)
 
-        intent.putExtra("Disciplina", disciplina)
+        intent.putExtra("disciplina", disciplina)
+
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
