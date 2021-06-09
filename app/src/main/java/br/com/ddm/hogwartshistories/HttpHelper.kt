@@ -17,7 +17,12 @@ object HttpHelper {
 
     fun post(url: String, json: String) : String {
         val body = RequestBody.create(JSON, json)
-        val request = Request.Builder().url(url).post().build()
+        val request = Request.Builder().url(url).post(body).build()
+        return getJson(request)
+    }
+
+    fun delete(url: String) : String {
+        val request = Request.Builder().url(url).delete().build()
         return getJson(request)
     }
 

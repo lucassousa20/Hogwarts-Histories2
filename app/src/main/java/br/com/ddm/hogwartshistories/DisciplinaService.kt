@@ -24,6 +24,11 @@ object DisciplinaService {
         return disciplinas
     }
 
+    fun saveDisciplina(disciplina: Disciplina): String {
+        val json = HttpHelper.post("$host/disciplinas", disciplina.toJson())
+        return json
+    }
+
     inline fun <reified T> perserJson(json: String) : T {
         val type = object: TypeToken<T>(){}.type
         return Gson().fromJson<T>(json, type)

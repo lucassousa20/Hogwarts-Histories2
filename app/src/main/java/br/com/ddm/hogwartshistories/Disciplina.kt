@@ -1,5 +1,6 @@
 package br.com.ddm.hogwartshistories
 
+import com.google.gson.GsonBuilder
 import java.io.Serializable
 
 class Disciplina: Serializable   {
@@ -10,5 +11,8 @@ class Disciplina: Serializable   {
     var foto = ""
     var professor = ""
 
+    fun toJson(): String {
+        return GsonBuilder().create().toJson(this)
+    }
 
 }
